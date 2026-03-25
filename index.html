@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        body {
+            background-color: rgb(0, 0, 33);
+            color: white;
+            padding-top: 70px;
+            height: 100%;
+        }
+
+        main {
+            flex: 1;
+            padding: 20px;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            margin: 0px;
+            position: fixed;
+            width: 100%;
+
+        }
+
+        section {
+            min-height: 60vh;
+            text-align: center;
+
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 80px;
+            background-color: rgb(3, 3, 63);
+            width: 100%;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 0 23px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+
+        }
+
+        nav ul li a:hover {
+            color: rgb(127, 127, 245);
+            font-size: 1.01rem;
+        }
+
+        .left {
+            font-size: 1.6rem;
+        }
+
+        .firstSection {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 50px 0;
+        }
+
+        .firstSection>div {
+            width: 30%;
+        }
+
+        .rightSection img {
+
+            width: 100%;
+            height: 90%;
+        }
+
+        .leftSection {
+            font-size: 2.5rem;
+        }
+
+        .red {
+            color: #ab00ff;
+        }
+
+        #element {
+            color: #ab00ff;
+        }
+
+        .about,
+        .skills,
+        .projects,
+        .contact {
+
+            margin-top: 50px;
+        }
+
+
+        .skills-list {
+            display: flex;
+            gap: 50px;
+
+            margin-top: 40px;
+            padding: 30px;
+            justify-content: center;
+
+        }
+
+        .skill {
+
+            background: #1e293b;
+            padding: 15px 25px;
+            border-radius: 20px;
+        }
+
+        .project-card {
+            background: #1e293b;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 15px;
+        }
+
+
+
+        footer {
+            text-align: center;
+            padding: 10px;
+
+            background: #1e293b;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <div class="left">Jiya's Portfolio</div>
+                <div class="right">
+                    <ul>
+                        <li><a href="#" onclick="showSection('home')">Home</a></li>
+                        <li><a href="#" onclick="showSection('about')">About</a></li>
+                        <li><a href="#" onclick="showSection('skills')">Skills</a></li>
+                        <li><a href="#" onclick="showSection('projects')">Projects</a></li>
+                        <li><a href="#" onclick="showSection('contact')">Contact Me</a></li>
+                    </ul>
+                </div>
+
+            </nav>
+
+        </header>
+        <main>
+            <section class="firstSection" id="home">
+                <div class="leftSection">
+                    Hi,My name is
+                    <span class="red">Jiya</span>
+                    <div>
+                        and I am a passionate
+                    </div>
+
+                    <span id="element"></span>
+                </div>
+                <div class="rightSection">
+                    <img src="bg.png" alt="">
+                </div>
+            </section>
+
+            <section class="about" id="about" style="display:none;">
+                <h2>About Me</h2>
+                <p>I am a web developer with a strong foundation in web technologies, including HTML, CSS, JavaScript.
+                    I enjoy designing interactive, responsive websites and continuously learning new
+                    technologies to improve my craft.
+                </p>
+            </section>
+
+            <section class="skills" id="skills" style="display:none;">
+                <h2>My Skills</h2>
+                <div class="skills-list">
+                    <div class="skill">HTML</div>
+                    <div class="skill">CSS</div>
+                    <div class="skill">JavaScript</div>
+                    <div class="skill">Responsive Design</div>
+                    <div class="skill">Basic design sense</div>
+                </div>
+            </section>
+
+            <section class="projects" id="projects" style="display:none;">
+                <h2>My Projects</h2>
+
+                <div class="project-card">
+                    <h3>Portfolio Website</h3>
+                    <p>A personal portfolio website showcasing my work.</p>
+                </div>
+
+                <div class="project-card">
+                    <h3>E-commerce Website</h3>
+                    <p>Responsive online store with shopping cart functionality.</p>
+                </div>
+
+            </section>
+
+            <section class="contact" id="contact" style="display:none;">
+                <h2>Contact Me</h2>
+                <p>Email: jiyanavinkumarpatel@email.com</p>
+                <p>LinkedIn: linkedin.com/in/JIYA PATEL</p>
+
+
+            </section>
+
+
+        </main>
+        <footer>
+            © 2026 Jiya Patel | All Rights Reserved
+        </footer>
+    </div>
+    <script src="https://unpkg.com/typed.js@3.0.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['Responsive Design','Web Developer'],
+            typeSpeed: 60,
+        });
+
+
+
+        function showSection(id) {
+            let sections = document.querySelectorAll("section");
+
+            sections.forEach(section => {
+                section.style.display = "none";
+            });
+
+            let active = document.getElementById(id);
+
+            // Only home uses flex, others use block
+            if (id === "home") {
+                active.style.display = "flex";
+            } else {
+                active.style.display = "block";
+            }
+        }
+
+    </script>
+</body>
+
+</html>
